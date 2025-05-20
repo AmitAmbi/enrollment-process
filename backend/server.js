@@ -6,18 +6,18 @@ const session = require("express-session");
 // const connectDB = require("./config/db");
 const offerLetterRoutes = require('./routes/offerLetterRoutes');
 const  enrollmentRoutes= require('./routes/enrollmentRoutes')
-const db = require("./config/db"); // ✅ pool imported
-const socketIO = require("socket.io"); // ✅ import socket.io
+const db = require("./config/db"); 
+const socketIO = require("socket.io"); 
 const path = require('path');
-const scheduleRoutes = require('./routes/scheduleRoutes'); // Add this line
+const scheduleRoutes = require('./routes/scheduleRoutes'); 
 
 
 require("dotenv").config();
-const http = require("http"); // ✅ for creating HTTP server
+const http = require("http"); 
 
 const app = express();
-app.use(express.json()); // ⬅️ This is required
-// Optional: Test DB connection
+app.use(express.json()); 
+
 (async () => {
     try {
       const [rows] = await db.query("SELECT 1"); // simple test query
@@ -27,23 +27,23 @@ app.use(express.json()); // ⬅️ This is required
       process.exit(1); // exit if connection fails
     }
   })();
-// Session setup if needed
+
 app.use(session({
   secret: 'your_secret',
   resave: false,
   saveUninitialized: true,
 }));
 
-const server = http.createServer(app); // ✅ wrap app in http server
+const server = http.createServer(app); 
 const io = socketIO(server, {
   cors: {
-    origin: "http://localhost:3000", 
+    origin:process.env.CLIENT_URL, 
     methods: ["GET", "POST"],
     credentials: true,
   },
 });
-// ✅ CORRECT ORDER
-app.use(cors({ origin: "http://localhost:3000", credentials: true }));
+
+app.use(cors({ origin:process.env.CLIENT_URL, credentials: true }));
 app.use(express.json());
 
 app.use(passport.initialize());
@@ -53,12 +53,12 @@ app.use(passport.initialize());
 app.use(passport.session());
 app.use('/api/offer', offerLetterRoutes);
 
-// ✅ Register passport strategies BEFORE routes
+
 require("./config/passport"); // Make sure this file contains the GoogleStrategy registration
 
-// ✅ Enable CORS
+
 app.use(cors({
-  origin: "http://localhost:3000",
+  origin: "",
   credentials: true
 }));
 
@@ -91,23 +91,21 @@ app.use(express.json());
 app.use("/auth", require("./routes/authRoutes"));
 
 
-// ✅ Add this middleware function BEFORE any protected route
+
 function isLoggedIn(req, res, next) {
     if (req.isAuthenticated()) return next();
-    res.redirect("/login"); // Or you can send a 401 JSON response
+    res.redirect("/login"); 
   }
   
-  // ✅ Protect this route
+
   app.get("/", isLoggedIn, (req, res) => {
     res.send(`Welcome ${req.user.name}`);
   });
-  // Routes
+
   app.use("/api", enrollmentRoutes);
   
 
-  // require("./cronJobs/approveEnrollments");
-// Start the server
-
+  
 app.use('/api/schedule', scheduleRoutes);
 app.listen(5000, () => {
   console.log("Server started on http://localhost:5000");
