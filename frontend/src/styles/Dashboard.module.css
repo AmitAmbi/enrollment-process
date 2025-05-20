@@ -182,8 +182,37 @@
   text-decoration: underline;
 }
 
+@media (max-width:1381px) {
+  .withSidebar {
+  max-width: 1000px;
+
+  }
+}
+
+@media (max-width:1281px) {
+  .withSidebar {
+  max-width: 940px;
+  left: 11%;
+
+  }
+}
+@media (max-width:1181px) {
+  .withSidebar {
+  max-width: 850px;
+  left: 11%;
+
+  }
+}
+@media (max-width:1024px) {
+  .withSidebar {
+  max-width: 780px;
+        left: 10%;
+
+
+  }
+}
 /* Responsive Adjustments */
-@media (max-width: 768px) {
+@media (max-width: 862px) {
   .contentArea {
     margin-left: 0 !important;
     width: 100%;

@@ -91,6 +91,26 @@
   display: flex;
   align-items: center;
 }
+@media (max-width:1181px){
+  .navbar{
+    left: -18%;
+  }
+}
+@media (max-width:1281px){
+  .navbar{
+    left: -20%;
+  }
+}
+@media (max-width:1181px){
+  .navbar{
+    left: -23%;
+  }
+}
+@media (max-width:1081px){
+  .navbar{
+    left: -26%;
+  }
+}
 
 @media (min-width: 768px) {
   .menuButton {
@@ -108,7 +128,8 @@
   }
 }
 
-@media (max-width: 640px) {
+
+@media (max-width: 861px) {
   .navbar {
     padding: 0 1rem;
     height: 3.5rem;

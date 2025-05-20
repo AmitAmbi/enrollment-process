@@ -224,7 +224,18 @@
   to { opacity: 1; }
 }
 
-@media (max-width: 767px) {
+@media (max-width: 1081px){
+  .sidebar{width: 230px;}
+}
+
+@media (max-width: 1024px){
+  .sidebar{width: 200px;}
+  .menuLabel{
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 861px) {
   .sidebar {
     width: 300px;
     transform: translateX(-100%);

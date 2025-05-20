@@ -180,27 +180,52 @@ exports.checkStatus = async (req, res) => {
   // In your offerLetterController.js
 
 // Direct download endpoint
-exports.download = async (req, res) => {
-    try {
-      const email = req.params.email;
-      const [results] = await db.query(
-        'SELECT offer_letter_path FROM user WHERE email = ?',
-        [email]
-      );
+// exports.download = async (req, res) => {
+//     try {
+//       const email = req.params.email;
+//       const [results] = await db.query(
+//         'SELECT offer_letter_path FROM user WHERE email = ?',
+//         [email]
+//       );
   
-      if (results.length === 0 || !results[0].offer_letter_path) {
-        return res.status(404).json({ message: 'Offer letter not found' });
-      }
+//       if (results.length === 0 || !results[0].offer_letter_path) {
+//         return res.status(404).json({ message: 'Offer letter not found' });
+//       }
   
-      const filePath = path.join(__dirname, '../public/pdfs', results[0].offer_letter_path);
-      res.download(filePath, 'Scholarship_Letter.pdf');
+//       const filePath = path.join(__dirname, '../public/pdfs', results[0].offer_letter_path);
+//       res.download(filePath, 'Scholarship_Letter.pdf');
       
-    } catch (error) {
-      console.error('Download error:', error);
-      res.status(500).json({ message: 'Server error' });
-    }
-  };
+//     } catch (error) {
+//       console.error('Download error:', error);
+//       res.status(500).json({ message: 'Server error' });
+//     }
+//   };
   
+
+
+exports.download = async (req, res) => {
+  try {
+    const email = req.params.email;
+    const [results] = await db.query(
+      'SELECT offer_letter_path FROM user WHERE email = ?',
+      [email]
+    );
+
+    if (results.length === 0 || !results[0].offer_letter_path) {
+      return res.status(404).json({ message: 'Offer letter not found' });
+    }
+
+    const s3Key = results[0].offer_letter_path;
+    const signedUrl = await getSignedUrl(S3_BUCKET_NAME, s3Key);
+    
+    // Redirect to the signed URL
+    res.redirect(signedUrl);
+    
+  } catch (error) {
+    console.error('Download error:', error);
+    res.status(500).json({ message: 'Server error' });
+  }
+};
   // Generate and download endpoint
   exports.generateAndDownload = async (req, res) => {
     try {
@@ -227,3 +252,6 @@ exports.download = async (req, res) => {
       res.status(500).json({ message: 'Server error' });
     }
   };
+
+
+  

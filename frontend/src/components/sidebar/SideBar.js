@@ -23,8 +23,8 @@ export default function Sidebar({user, selected, onSelect }) {
 
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth < 768);
-      if (window.innerWidth >= 768) {
+      setIsMobile(window.innerWidth < 868);
+      if (window.innerWidth >= 868) {
         setSidebarOpen(true);
       }
     };
