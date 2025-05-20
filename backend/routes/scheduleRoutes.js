@@ -30,9 +30,9 @@ router.post('/schedule-evaluation', async (req, res) => {
     // Store in database as ISO string with timezone info
     const dbTime = scheduledTime.format();
     
-    // Update database first
+    // Update database with meeting_time and meeting_status
     const [result] = await db.execute(
-      'UPDATE user SET meeting_time = ? WHERE email = ?',
+      'UPDATE user SET meeting_time = ?, meeting_status = "scheduled" WHERE email = ?',
       [dbTime, email]
     );
 
@@ -43,18 +43,17 @@ router.post('/schedule-evaluation', async (req, res) => {
     // Prepare webhook data
     const webhookData = {
       user_email: email,
-      scheduled_time: dbTime // Using the properly formatted IST time
+      scheduled_time: dbTime
     };
 
-    console.log('Attempting to call webhook with data:', webhookData); // Debug log
+    console.log('Attempting to call webhook with data:', webhookData);
 
-    // Trigger webhook with timeout and better error handling
     try {
       const webhookResponse = await axios.post(
         'https://lbayms.in/gauth/service_account_meeting.php',
         webhookData,
         {
-          timeout: 10000, // 10 second timeout
+          timeout: 10000,
           headers: {
             'Content-Type': 'application/json',
             'Accept': 'application/json'
@@ -62,7 +61,7 @@ router.post('/schedule-evaluation', async (req, res) => {
         }
       );
 
-      console.log('Webhook response:', webhookResponse.data); // Debug log
+      console.log('Webhook response:', webhookResponse.data);
 
       // If webhook returns meeting link, update database
       if (webhookResponse.data?.scheduled_meeting_link) {
@@ -72,35 +71,29 @@ router.post('/schedule-evaluation', async (req, res) => {
         );
       } else {
         console.warn('Webhook succeeded but no meeting link returned');
-        // You might want to store a default meeting URL or handle this case
       }
 
       return res.json({ 
         success: true, 
         scheduled: dbTime,
+        meeting_status: "scheduled",
         scheduled_meeting_link: webhookResponse.data?.scheduled_meeting_link || null
       });
 
     } catch (webhookError) {
-      console.error('Webhook failed:', {
-        message: webhookError.message,
-        response: webhookError.response?.data,
-        config: webhookError.config
-      });
+      console.error('Webhook failed:', webhookError);
 
-      // Even if webhook fails, consider it scheduled but notify client
+      // Even if webhook fails, meeting is still marked as scheduled in DB
       return res.json({ 
         success: true, 
         scheduled: dbTime,
+        meeting_status: "scheduled",
         warning: 'Scheduled but webhook may not have completed successfully'
       });
     }
     
   } catch (error) {
-    console.error('Backend error:', {
-      message: error.message,
-      stack: error.stack
-    });
+    console.error('Backend error:', error);
     return res.status(500).json({ 
       error: 'Internal server error',
       details: error.message 

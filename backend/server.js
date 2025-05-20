@@ -10,7 +10,7 @@ const db = require("./config/db");
 const socketIO = require("socket.io"); 
 const path = require('path');
 const scheduleRoutes = require('./routes/scheduleRoutes'); 
-
+const paymentStatusRouter = require('./routes/payment-status');
 
 require("dotenv").config();
 const http = require("http"); 
@@ -91,6 +91,7 @@ app.use(express.json());
 app.use("/auth", require("./routes/authRoutes"));
 
 
+app.use('/api/payment-status', paymentStatusRouter);
 
 function isLoggedIn(req, res, next) {
     if (req.isAuthenticated()) return next();

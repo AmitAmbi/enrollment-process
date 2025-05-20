@@ -238,6 +238,7 @@ function StepCard({
                 className={styles.datePickerInput}
                 timeCaption="Time (IST)"
                 utcOffset={5.5 * 60}
+                calendarClassName={styles.datePickerCalendar} 
               />
             </div>
 
@@ -301,10 +302,18 @@ function StepCard({
               </button>
             ) : meetingData?.exists ? (
               <div className={styles.meetingInfo}>
-                <p>
-                  <strong>Scheduled:</strong>{" "}
-                  {new Date(meetingData.meeting_time).toLocaleString()}
-                </p>
+               <p>
+  <strong>Scheduled:</strong>{" "}
+  {new Date(meetingData.meeting_time).toLocaleString('en-US', {
+    weekday: 'short', // e.g., "Mon"
+    month: 'short',  // e.g., "Jun"
+    day: 'numeric',  // e.g., "5"
+    year: 'numeric', // e.g., "2023"
+    hour: 'numeric', // e.g., "2"
+    minute: '2-digit', // e.g., "30"
+    hour12: true     // This ensures 12-hour format
+  })}
+</p>
                 <button 
                   onClick={handleJoinMeeting}
                   className={styles.joinButton}

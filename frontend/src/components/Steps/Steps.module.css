@@ -583,33 +583,37 @@ li.react-datepicker__time-list-item--selected {
   margin: 0;
   font-size: 14px;
 }
-
-
-.processingButton {
-  background-color: #FFA500;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 5px;
-  cursor: not-allowed;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
+/* DatePicker styles */
+.datePickerInput {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+  color: #000; /* Black text */
+  background-color: #fff;
 }
 
-.spinner {
-  display: inline-block;
-  width: 16px;
-  height: 16px;
-  border: 2px solid rgba(255, 255, 255, 0.3);
-  border-radius: 50%;
-  border-top-color: white;
-  animation: spin 1s ease-in-out infinite;
+/* Calendar popup styles */
+.datePickerCalendar {
+  color: #000 !important; /* Black text in calendar */
+  background-color: #fff !important;
 }
 
-@keyframes spin {
-  to { transform: rotate(360deg); }
+.datePickerCalendar .react-datepicker__header {
+  background-color: #fff !important;
+  color: #000 !important;
+}
+
+.datePickerCalendar .react-datepicker__day-name,
+.datePickerCalendar .react-datepicker__day,
+.datePickerCalendar .react-datepicker__time-name {
+  color: #000 !important;
+}
+
+.datePickerCalendar .react-datepicker__current-month,
+.datePickerCalendar .react-datepicker-time__header {
+  color: #000 !important;
 }
 
 @media (max-width: 768px) {
