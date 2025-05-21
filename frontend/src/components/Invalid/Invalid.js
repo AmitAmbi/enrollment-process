@@ -18,7 +18,7 @@ export default function InvalidUser() {
         />
         <h2 className={styles.title}>Access Denied</h2>
         <p className={styles.message}>
-          It looks like you're not enrolled. Please enroll to continue.
+          It looks like you&apos;re not enrolled. Please enroll to continue.
         </p>
         <button className={styles.button} onClick={handleEnroll}>
           Enroll Now

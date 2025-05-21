@@ -22,7 +22,7 @@ export default function Home({ user }) {
     );
   }
 
-  return <div>Loading...</div>;  // Show a loading screen while redirecting
+  return <div>Loading...</div>;  
 }
 
 export async function getServerSideProps(context) {
@@ -36,7 +36,7 @@ export async function getServerSideProps(context) {
 
   const data = await res.json();
 
-  // If the user is authenticated, redirect to the dashboard
+
   if (data.isAuthenticated) {
     return {
       redirect: {
@@ -46,7 +46,7 @@ export async function getServerSideProps(context) {
     };
   }
 
-  // If the user is not authenticated, redirect to the login page
+
   if (!data.isAuthenticated) {
     return {
       redirect: {
@@ -56,7 +56,6 @@ export async function getServerSideProps(context) {
     };
   }
 
-  // If no authentication data is available, render the home page
   return {
     props: {
       user: data.user || null,

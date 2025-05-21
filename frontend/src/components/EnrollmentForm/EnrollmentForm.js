@@ -204,7 +204,7 @@ export default function EnrollmentForm({ onClose, onComplete, user }) {
           <div className={styles.info}>
             <h4>Personal Information</h4>
             <span className={styles.spant}>
-              Let's start with some basic information about you
+              Let&apos;s start with some basic information about you
             </span>
           </div>
 

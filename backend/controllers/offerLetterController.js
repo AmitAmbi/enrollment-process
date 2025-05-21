@@ -177,6 +177,7 @@ exports.checkStatus = async (req, res) => {
     }
   };
 
+
   // In your offerLetterController.js
 
 // Direct download endpoint
@@ -253,5 +254,38 @@ exports.download = async (req, res) => {
     }
   };
 
+
+  // controllers/enrollmentController.js
+
+  exports.checkPaymentStatus = async (req, res) => {
+    try {
+      const email = req.params.email;
+      
+      // Query only the payment status without updating anything
+      const [results] = await db.query(
+        'SELECT payment_status FROM user WHERE email = ?',
+        [email]
+      );
+  
+      if (results.length === 0) {
+        return res.status(404).json({ 
+          success: false, 
+          message: 'User not found' 
+        });
+      }
+  
+      res.json({
+        success: true,
+        paymentStatus: results[0].payment_status === 1
+      });
+  
+    } catch (error) {
+      console.error('Error checking payment status:', error);
+      res.status(500).json({ 
+        success: false,
+        message: 'Server error while checking payment status' 
+      });
+    }
+  };
 
   
