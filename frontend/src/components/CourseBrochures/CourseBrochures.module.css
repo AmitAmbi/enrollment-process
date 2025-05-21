@@ -82,7 +82,10 @@
 .courseGrid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-    gap: 2rem;
+    gap: 4rem;
+    display: grid
+;
+    padding: 20px;
 }
 
 .courseCard {
@@ -101,7 +104,7 @@
 
 .cardImage {
     position: relative;
-    height: 180px;
+    height: 200px;
     overflow: hidden;
 }
 
@@ -117,6 +120,28 @@
     right: 10px;
     display: flex;
     gap: 8px;
+}
+.certification li {
+    color: #7F7B7B;
+font-size: 20px;
+font-style: normal;
+font-weight: 600;
+line-height: 41px; /* 146.429% */
+
+}
+.certification {
+    padding: 10px;
+}
+.projects, .duration{
+    border-radius: 5.99px;
+background: #E4E3E3;
+color: #000;
+padding: 7px 20px;
+color: #1B1B1B;
+font-size: 14.99px;
+font-style: normal;
+font-weight: 600;
+line-height: 126.5%; /* 25.288px */
 }
 
 .badge {
@@ -165,43 +190,81 @@
     font-style: italic;
 }
 
+
 .cardFooter {
     display: flex;
     border-top: 1px solid #e2e8f0;
     padding: 1rem 1.5rem;
+
+    justify-content: space-between;
+
 }
 
 .brochureButton {
-    padding: 0.6rem 1.2rem;
-    background: linear-gradient(90deg, #037ff7 0%, #02529f 100%);
+    padding: 0.3rem 1.8rem;
+    border-radius: 7.037px;
+    border: 0.704px solid #000;
+    background: #000;
     color: white;
     text-decoration: none;
     border-radius: 4px;
-    font-weight: 600;
-    font-size: 0.9rem;
     transition: background-color 0.3s;
     margin-right: 0.8rem;
+    text-align: center;
+    align-items: center;
+}
+.brochureButton a {
+    color: #FFF;
+font-size: 20.487px;
+font-style: normal;
+font-weight: 500;
+line-height: 126.5%; /* 29.712px */
+padding:2px 10px;
 }
 
-.brochureButton:hover {
-    background: #2b6cb0;
+.downloadIcon{
+    width: 33px;
+    height: 100%;
+    color: black;
+    padding: 4px;
+    margin: 0;
+    border: none;
+background-color: #fff;
+
 }
+
+.brochureButton{
+    justify-content: space-between;
+    display: flex
+;
+    padding: 0;
+    gap: 20px;
+}
+
 
 .detailsButton {
-    padding: 0.6rem 1.2rem;
-    background-color: white;
-    color: linear-gradient(90deg, #037ff7 0%, #02529f 100%);
+    padding: 0.3rem 1.2rem;
+    border-radius: 7.037px;
+    border: 0.704px solid #000;
+    background: #FFF;
+    /* box-shadow: 6.09px 8.12px 17.052px 0px rgba(0, 0, 0, 0.25); */
+    color: #030303;
+    font-style: normal;
+    line-height: 126.5%; /* 29.712px */
     text-decoration: none;
     border-radius: 4px;
-    font-weight: 600;
     font-size: 0.9rem;
     transition: all 0.3s;
     border: 1px solid linear-gradient(90deg, #037ff7 0%, #02529f 100%);
 }
-
-.detailsButton:hover {
-    background-color: #ebf8ff;
+.detailsButton a {
+    color: #030303;
+font-size: 20.487px;
+font-style: normal;
+font-weight: 500;
+line-height: 126.5%; /* 29.712px */
 }
+
 
 /* Responsive styles */
 @media (max-width: 768px) {
@@ -216,20 +279,42 @@
 
     .courseGrid {
         grid-template-columns: 1fr;
+        padding: 0;
+    }
+    .courseBrochures{
+        padding: 0;
+    }
+
+    .cardContent{
+        padding: 20px 20px 0px 20px;
+    }
+
+    .cardFooter {
+        flex-direction: row;
+    }
+
+    .brochureButton a{
+        font-size: 16px;
+    }
+    .detailsButton a{
+        font-size: 16px;
+    }
+    .cardFooter{
+        flex-direction: row;
     }
 }
 
+
+
 @media (max-width: 480px) {
-    .courseBrochures {
-        padding: 2rem 1rem;
-    }
+  
     
     .sectionTitle {
         font-size: 1.3rem;
     }
     
     .cardFooter {
-        flex-direction: column;
+        /* flex-direction: column; */
         gap: 0.8rem;
     }
     

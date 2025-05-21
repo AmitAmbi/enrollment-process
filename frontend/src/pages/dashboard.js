@@ -12,6 +12,8 @@ import SuccessStories from '@/components/SuccessStories/SuccessStories';
 import DownloadOfferLetter from '@/components/DownloadOfferLetter/DownloadOfferLetter';
 import CourseBrochures from '@/components/CourseBrochures/CourseBrochures';
 import ThemeToggle from '@/components/ThemeToggle';
+import FeaturesSection from '@/components/Features/Features';
+import DemoVideoSection from '@/components/DevVideoSection/DemoVideoSection';
 
 export default function Dashboard() {
   const { loading, user } = useAuth();
@@ -101,25 +103,28 @@ export default function Dashboard() {
             <div className={styles.sectionContainer}>
               <h3>Demo Lectures</h3>
               <p>Watch sample lectures to understand our teaching style.</p>
-              <div className={styles.videoGrid}>
+              {/* <div className={styles.videoGrid}>
                 <div className={styles.videoThumbnail}></div>
                 <div className={styles.videoThumbnail}></div>
                 <div className={styles.videoThumbnail}></div>
-              </div>
+              </div> */}
+              < DemoVideoSection/>
             </div>
           )}
 
           {activeSection === 'features' && (
             <div className={styles.sectionContainer}>
-              <h3>Program Features</h3>
-              <ul className={styles.featuresList}>
+        
+              {/* <ul className={styles.featuresList}>
                 <li>Industry-aligned curriculum</li>
                 <li>Live sessions with experts</li>
                 <li>24x7 support</li>
                 <li>Hands-on projects</li>
                 <li>Career guidance</li>
                 <li>Certificate upon completion</li>
-              </ul>
+              </ul> */}
+
+              <FeaturesSection/>
             </div>
           )}
 

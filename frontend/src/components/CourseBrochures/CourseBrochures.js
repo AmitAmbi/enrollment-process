@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { courses, categories } from "./data";
 import styles from "./CourseBrochures.module.css";
+import Image from "next/image";
+import { Divide, Download } from "lucide-react";
 
 const CourseBrochures = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -19,6 +21,16 @@ const CourseBrochures = () => {
     (course) => course.category === selectedCategory
   );
 
+  const downloadSvg = [
+    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25" fill="none">
+  <mask id="mask0_237_507" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="25" height="25">
+    <rect x="0.609863" y="0.51001" width="24.36" height="24.36" fill="#D9D9D9"/>
+  </mask>
+  <g mask="url(#mask0_237_507)">
+    <path d="M4.66992 22.84V20.81H20.9099V22.84H4.66992ZM12.7899 18.78L5.68492 9.64504H9.74492V2.54004H15.8349V9.64504H19.8949L12.7899 18.78Z" fill="#1C1B1F"/>
+  </g>
+</svg>
+  ]
   return (
     <section className={styles.courseBrochures}>
       <div className={styles.container}>
@@ -69,32 +81,45 @@ const CourseBrochures = () => {
               </div>
               
               <div className={styles.cardContent}>
-                <h3 className={styles.courseTitle}>{course.title}</h3>
+                {/* <h3 className={styles.courseTitle}>{course.title}</h3> */}
                 
                 <div className={styles.courseDetails}>
                   <span className={styles.duration}>{course.duration}</span>
-                  <span className={styles.separator}>|</span>
+            
                   <span className={styles.projects}>{course.projects} Projects</span>
                 </div>
                 
                 <div className={styles.certification}>
-                  {course.certification}
+              <ul>
+                <li>    {course.certification}</li>
+                <li>   {course.for}</li>
+              </ul>
                 </div>
+
                 
-                {course.for && (
+                {/* {course.for && (
                   <div className={styles.for}>
                     {course.for}
                   </div>
-                )}
+                )} */}
               </div>
               
               <div className={styles.cardFooter}>
-                <a href={course.brochureLink} className={styles.brochureButton}>
-                  Brochure
+               <div className={styles.brochureButton}> <a href={course.brochureLink} >
+                  Brochure 
                 </a>
-                <a href={course.detailsLink} className={styles.detailsButton}>
+             <div className={styles.downloadIcon}>
+              {/* <Image src="/course/download_2.webp" width={30} height={30} loading="lazy" alt="download"/> */}
+              <Download />
+             </div>
+          
+                </div>
+
+               <div className={styles.detailsButton}>
+               <a href={course.detailsLink} >
                   View Details
                 </a>
+               </div>
               </div>
             </div>
           ))}

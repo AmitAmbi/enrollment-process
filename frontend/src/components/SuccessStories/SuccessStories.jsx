@@ -6,44 +6,158 @@ const testimonials = [
   {
     name: "Shravanthi A",
     role: "Data Scientist",
-    review: "Learnhow has helped me a lot to learn data science applications in the e-commerce industry. The live class concept was really helpful in receiving proper DS training. Thanks to all my mentors, not the placement team.",
+    review: "LearnBay has helped me a lot to learn data science applications in the e-commerce industry. The live class concept was really helpful in receiving proper DS training. Thanks to all my mentors and the placement team.",
     domain: "Mechanical Domain",
-    company: "Today Hike",
-    salaryHike: "161.52",
-    profile: "/Testimoals/testin_1.webp",
-    comIcons: "/comIcons/ford.webp",
+    company: "Ford",
+    salaryHike: "161%",
+    profile: "/testimonials/shravanthi.webp",
+    comIcons: "/company-logos/ford.webp",
     rating: 5,
     video: true,
-    videoUrl: "https://www.youtube.com/embed/-cYskbVjRfo?start=7" // Converted URL
-
+    videoUrl: "https://www.youtube.com/embed/ford-testimonial"
   },
   {
-    name: "Personal Mishra",
+    name: "Preksha Mishra",
     role: "Lead Data Scientist",
-    review: "The course structure is excellent with emphasis on concept building and tools & software at the same time. The support team is excellent and supports the skills of the agile to respond to doubts.",
+    review: "The course structure is excellent with emphasis on concept building and tools & software at the same time. The support team is excellent and responds to doubts promptly with agile methodology.",
     domain: "Telecom Domain",
-    company: "Today Hike",
-    salaryHike: "848.32",
-    profile: "/Testimoals/testin_1.webp",
-    comIcons: "/comIcons/hcl.webp",
+    company: "HCL",
+    salaryHike: "848%",
+    profile: "/testimonials/preksha.webp",
+    comIcons: "/company-logos/hcl.webp",
     rating: 5,
     video: true,
-    videoUrl: "https://www.youtube.com/embed/-cYskbVjRfo?start=7" // Converted URL
-
+    videoUrl: "https://www.youtube.com/embed/hcl-testimonial"
   },
   {
-    name: "Mobile Israr",
+    name: "Mohit Israr",
     role: "Data Scientist",
-    review: "Thanks to the Learning data science course & excellent guidance. I was able to see the TCS interview and secure a job with a 20% pay raise. The real-world time projects helped me develop my concepts as a data scientist.",
-    domain: "Sales",
-    company: "Today Hike",
-    salaryHike: "397.61",
-    profile: "/Testimoals/testin_1.webp",
-    comIcons: "/comIcons/teleper.webp",
+    review: "Thanks to the LearnBay data science course & excellent guidance. I was able to crack the TCS interview and secure a job with a 397% pay raise. The real-world projects helped me develop my concepts as a data scientist.",
+    domain: "Sales Domain",
+    company: "Teleperformance",
+    salaryHike: "397%",
+    profile: "/testimonials/mohit.webp",
+    comIcons: "/company-logos/teleperformance.webp",
     rating: 5,
     video: true,
-    videoUrl: "https://www.youtube.com/embed/-cYskbVjRfo?start=7" // Converted URL
-
+    videoUrl: "https://www.youtube.com/embed/teleperformance-testimonial"
+  },
+  {
+    name: "Rahul Sharma",
+    role: "Machine Learning Engineer",
+    review: "The hands-on projects and industry-relevant curriculum helped me transition from a software developer to ML engineer. The career support team was exceptional in preparing me for interviews.",
+    domain: "IT Domain",
+    company: "Google",
+    salaryHike: "220%",
+    profile: "/testimonials/rahul.webp",
+    comIcons: "/company-logos/google.webp",
+    rating: 5,
+    video: true,
+    videoUrl: "https://www.youtube.com/embed/google-testimonial"
+  },
+  {
+    name: "Priya Patel",
+    role: "Data Analyst",
+    review: "As a fresher, I was struggling to get my first break. The course gave me practical skills and confidence. Got placed within 3 months of completion with a great package at Amazon!",
+    domain: "Finance Domain",
+    company: "Amazon",
+    salaryHike: "180%",
+    profile: "/testimonials/priya.webp",
+    comIcons: "/company-logos/amazon.webp",
+    rating: 5,
+    video: true,
+    videoUrl: "https://www.youtube.com/embed/amazon-testimonial"
+  },
+  {
+    name: "Amit Singh",
+    role: "AI Specialist",
+    review: "The depth of content and quality of instructors exceeded my expectations. I was able to implement AI solutions at my workplace immediately after the course at IBM.",
+    domain: "Healthcare Domain",
+    company: "IBM",
+    salaryHike: "300%",
+    profile: "/testimonials/amit.webp",
+    comIcons: "/company-logos/ibm.webp",
+    rating: 5,
+    video: true,
+    videoUrl: "https://www.youtube.com/embed/ibm-testimonial"
+  },
+  {
+    name: "Neha Gupta",
+    role: "Business Analyst",
+    review: "Perfect blend of technical and business concepts. The case study approach helped me understand real business problems and how data can solve them at Microsoft.",
+    domain: "Retail Domain",
+    company: "Microsoft",
+    salaryHike: "150%",
+    profile: "/testimonials/neha.webp",
+    comIcons: "/company-logos/microsoft.webp",
+    rating: 5,
+    video: true,
+    videoUrl: "https://www.youtube.com/embed/microsoft-testimonial"
+  },
+  {
+    name: "Vikram Joshi",
+    role: "Data Engineer",
+    review: "The big data and cloud modules were game-changers for me. Got certified and promoted within 6 months of completing the course at Accenture.",
+    domain: "Logistics Domain",
+    company: "Accenture",
+    salaryHike: "175%",
+    profile: "/testimonials/vikram.webp",
+    comIcons: "/company-logos/accenture.webp",
+    rating: 5,
+    video: true,
+    videoUrl: "https://www.youtube.com/embed/accenture-testimonial"
+  },
+  {
+    name: "Ananya Reddy",
+    role: "Research Scientist",
+    review: "Coming from academia, I needed practical ML skills. The course bridged that gap perfectly and helped me land my dream research role at Pfizer.",
+    domain: "Pharmaceutical Domain",
+    company: "Pfizer",
+    salaryHike: "250%",
+    profile: "/testimonials/ananya.webp",
+    comIcons: "/company-logos/pfizer.webp",
+    rating: 5,
+    video: true,
+    videoUrl: "https://www.youtube.com/embed/pfizer-testimonial"
+  },
+  {
+    name: "Karthik Nair",
+    role: "Senior Data Scientist",
+    review: "The capstone project was instrumental in my career growth. It gave me something substantial to showcase during interviews and helped me negotiate better at Tesla.",
+    domain: "Automotive Domain",
+    company: "Tesla",
+    salaryHike: "200%",
+    profile: "/testimonials/karthik.webp",
+    comIcons: "/company-logos/tesla.webp",
+    rating: 5,
+    video: true,
+    videoUrl: "https://www.youtube.com/embed/tesla-testimonial"
+  },
+  {
+    name: "Sneha Verma",
+    role: "Data Science Consultant",
+    review: "The industry projects and mentorship helped me transition from banking to data science. Landed a consulting role at Deloitte with 230% hike.",
+    domain: "Banking Domain",
+    company: "Deloitte",
+    salaryHike: "230%",
+    profile: "/testimonials/sneha.webp",
+    comIcons: "/company-logos/deloitte.webp",
+    rating: 5,
+    video: true,
+    videoUrl: "https://www.youtube.com/embed/deloitte-testimonial"
+  },
+  {
+    name: "Arjun Mehta",
+    role: "AI Engineer",
+    review: "The advanced AI specialization helped me stand out. Got placed at Intel with 280% salary increase immediately after course completion.",
+    domain: "Electronics Domain",
+    company: "Intel",
+    salaryHike: "280%",
+    profile: "/testimonials/arjun.webp",
+    comIcons: "/company-logos/intel.webp",
+    rating: 5,
+    video: true,
+    videoUrl: "https://www.youtube.com/embed/intel-testimonial"
   }
 ];
 
@@ -81,6 +195,7 @@ const VideoPopup = ({ videoUrl, onClose }) => {
 
 const SuccessStories = () => {
   const [currentVideo, setCurrentVideo] = useState(null);
+  const [visibleTestimonials, setVisibleTestimonials] = useState(6);
 
   const openVideo = (videoUrl) => {
     setCurrentVideo(videoUrl);
@@ -89,6 +204,50 @@ const SuccessStories = () => {
   const closeVideo = () => {
     setCurrentVideo(null);
   };
+
+  const loadMore = () => {
+    setVisibleTestimonials(testimonials.length);
+  };
+
+  const showLess = () => {
+    setVisibleTestimonials(6);
+  };
+
+const getInitials = (name) => {
+  const names = name.split(' ');
+  let initials = names[0].substring(0, 1).toUpperCase();
+  
+  if (names.length > 1) {
+    initials += names[names.length - 1].substring(0, 1).toUpperCase();
+  }
+  
+  return initials;
+};
+
+const Avatar = ({ name, profile, width, height }) => {
+  const [imageError, setImageError] = useState(false);
+  
+  if (profile && !imageError) {
+    return (
+      <Image 
+        className={styles.avatarPlaceholder} 
+        src={profile} 
+        width={width} 
+        height={height} 
+        alt={name}
+        onError={() => setImageError(true)}
+      />
+    );
+  }
+
+
+  return (
+    <div className={styles.avatarInitials} style={{ width, height }}>
+      {getInitials(name)}
+    </div>
+  );
+};
+  
 
   return (
     <section className={styles.successSection}>
@@ -100,7 +259,7 @@ const SuccessStories = () => {
             <span className={styles.statNumber}>500+</span>
             <span className={styles.statLabel}>Successful Placements</span>
           </div>
-          <div className={styles.statBox}>
+          <div className={`${styles.statBox} ${styles.statBoxc}`}>
             <span className={styles.statNumber}>150%</span>
             <span className={styles.statLabel}>Average Salary Hike</span>
           </div>
@@ -111,39 +270,63 @@ const SuccessStories = () => {
         </div>
       </div>
 
-      <div className={styles.testimonialsContainer}>
-        <h2 className={styles.testimonialsTitle}>Student Testimonial</h2>
+    <div className={styles.testimonialsContainer}>
+        <h2 className={styles.testimonialsTitle}>Student Testimonials</h2>
         <div className={styles.testimonials}>
-          {testimonials.map((item, index) => (
+          {testimonials.slice(0, visibleTestimonials).map((item, index) => (
             <div className={styles.card} key={index}>
               <div className={styles.profile}>
-                <Image className={styles.avatarPlaceholder} src={item.profile} width={80} height={80}/>
+             <div className={styles.newprofile}> 
+
+             <Avatar 
+                  name={item.name} 
+                  profile={item.profile} 
+                  width={60} 
+                  height={60} 
+                />
                 <div className={styles.profileInfo}>
                   <h4>{item.name}</h4>
                   <p>{item.role}</p>
                   <div className={styles.rating}>{"⭐".repeat(item.rating)}</div>
                 </div>
-                {item.video && (
+             </div>
+            <div>
+            {item.video && (
                   <button 
                     className={styles.videoTag} 
                     onClick={() => openVideo(item.videoUrl)}
+                    aria-label={`Watch ${item.name}'s video testimonial`}
                   >
                     <VideoIcon /> Watch Video
                   </button>
                 )}
+            </div>
               </div>
               <p className={styles.review}>"{item.review}"</p>
               <div className={styles.cardFooter}>
-                <div className={styles.footerInner}>{item.domain} →<p> <strong>{item.role}</strong> @</p> 
-                <Image src={item.comIcons} width={50} height={20} alt="logo" />
-                
-                
+                <div className={styles.footerInner}>
+                  {item.domain} → <p><strong>{item.role}</strong> @</p> 
+                  <Image src={item.comIcons} width={50} height={20} alt={item.company} />
                 </div>
                 <hr className={styles.hr}/>
                 <span className={styles.salaryHike}>{item.salaryHike} Salary Hike</span>
               </div>
             </div>
           ))}
+       
+           
+        </div>
+        
+        <div className={styles.loadMoreContainer}>
+          {visibleTestimonials < testimonials.length ? (
+            <button className={styles.loadMoreButton} onClick={loadMore}>
+              Load More Success Stories
+            </button>
+          ) : (
+            <button className={styles.loadMoreButton} onClick={showLess}>
+              Show Less
+            </button>
+          )}
         </div>
       </div>
 

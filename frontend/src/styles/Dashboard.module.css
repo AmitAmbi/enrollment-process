@@ -224,4 +224,10 @@
     margin-top: 20px;
     margin-bottom: 50px;
   }
+  .sectionContainer{
+    padding: 0;
+  }
+  .tesimonals{
+    margin-left: -53vw;
+  }
 }

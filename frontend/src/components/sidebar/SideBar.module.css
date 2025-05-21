@@ -91,6 +91,7 @@
 
 .sectionTitle:hover {
   background: #f9fafb;
+  color: #02529f;
 }
 
 .chevron {
@@ -120,7 +121,9 @@
 }
 
 .menuItem:hover {
-  background: #f3f4f6;
+  /* background: #f3f4f6; */
+  color: #02529f;
+  
 }
 
 .menuIcon {

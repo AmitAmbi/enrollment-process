@@ -2,6 +2,8 @@
   font-family: 'Poppins', sans-serif;
   max-width: 100%;
   overflow: hidden;
+  padding: 0;
+  margin: 0;
 }
 
 .header {
@@ -28,17 +30,21 @@
 }
 
 .stats {
+  display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: center;
   gap: 15px;
   margin-top: 30px;
-  display: flex
-;
-  width: 60%;
-  margin:50px auto 0 auto;
-
+  width: 100%;
+  max-width: 900px;
+  margin: 50px auto 0 auto;
 }
 
+.statsBoxc {
+  background:#fff !important;
+  color: #000;
+  border-radius: 10px;
+}
 .statBox {
   border-radius: 10px;
   background: #1488F7;
@@ -46,6 +52,8 @@
   padding: 15px 20px;
   min-width: 150px;
   text-align: center;
+  flex: 1 1 0;
+  min-width: 120px;
 }
 
 .statNumber {
@@ -63,9 +71,10 @@
 }
 
 .testimonialsContainer {
-  max-width: 1200px;
+  max-width: 1050px;
   margin: 0 auto;
   padding: 0 20px;
+
 }
 
 .testimonialsTitle {
@@ -77,19 +86,24 @@
 }
 
 .testimonials {
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-  gap:54px 40px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 50px;
   margin-bottom: 50px;
-  display: grid
-;
-  padding: 50px;
+  /* padding: 20px; */
 }
 
+
 .card {
-  border-radius:20px 20px 0 0;
+  border-radius: 20px;
   background: #FFF;
   box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
 
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
 }
 
 .profile {
@@ -98,40 +112,36 @@
   gap: 15px;
   position: relative;
   margin-bottom: 15px;
-  padding:20px 30px;
+  padding: 20px;
 }
 
 .avatarPlaceholder {
-  width: 90px;
-  height: 90px;
-  /* border-radius: 50%; */
-  /* background: #02509B; */
-  color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.5rem;
-  font-weight: bold;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.profileInfo {
+  flex: 1;
 }
 
 .profileInfo h4 {
   margin: 0;
   color: #000;
-  text-align: center;
-  font-size: 26.424px;
-  font-style: normal;
+  font-size: 1.3rem;
   font-weight: 700;
-  line-height: 147.182%; /* 35.948px */
+  line-height: 1.4;
+  text-align: left;
 }
 
 .profileInfo p {
   margin: 5px 0 0;
   color: #000;
-  text-align: center;
-  font-size: 17.285px;
-  font-style: normal;
+  font-size: 0.9rem;
   font-weight: 500;
-  line-height: 147.182%; /* 25.44px */
+  line-height: 1.4;
+  text-align: left;
 }
 
 .rating {
@@ -142,113 +152,113 @@
 
 .videoTag {
   position: absolute;
-  top: 27%;
-  right: 4%;
+  top: 20px;
+  right: 20px;
   border: 1px solid #FFD390;
   background: #FFF6E7;
   color: #F91500;
-  padding: 3px 10px;
+  padding: 5px 10px;
   font-size: 0.8rem;
   font-weight: 600;
   border-radius: 16px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.videoTag:hover {
+  background: #FFE8C7;
 }
 
 .review {
   margin: 20px 0;
-  color: #333;
-  font-size: 0.95rem;
-  line-height: 1.5;
+  line-height: 1.6;
   padding: 0 40px;
+  min-height: 100px;
+  color: #111010;
+font-size: 14.773px;
+font-style: normal;
+font-weight: 400;
 }
 
 .cardFooter {
-  display: flex;
+  display: grid
+  ;
+      grid-template-columns: 71% 22%;  
   justify-content: space-between;
   align-items: center;
   font-size: 0.85rem;
-color: #FFF;
-  /* border-radius: 15.704px; */
-border: 0.2px solid #FFF;
-background: #1488F7;
-box-shadow: -1px 11px 6.3px 0px rgba(0, 0, 0, 0.25);
-padding: 20px;
-position: relative;
-border-radius: 0px 0px 20px 20px;
-}
-.cardFooter p {
   color: #FFF;
-    font-size: 13.217px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: 148.5%;
-}
-.cardFooter strong {
-  /* color: #333; */
+  border: 0.2px solid #FFF;
+  border-radius: 15.704px;
+  border: 0.2px solid #FFF;
+  background: linear-gradient(180deg, #1488F7 0%, #0C5091 100%);
+  box-shadow: -1px 11px 6.3px 0px rgba(0, 0, 0, 0.25);
+  box-shadow: -1px 11px 6.3px 0px rgba(0, 0, 0, 0.25);
+  padding: 10px 20px;
+  position: relative;
+  border-radius: 0px 0px 20px 20px;
 }
 
-.hr{
-  width: 2px;
+.cardFooter p {
+  color: #FFF;
+  font-size: 0.8rem;
+  font-weight: 600;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.cardFooter strong {
+  font-weight: 700;
+}
+
+.hr {
+  width: 1px;
   height: 100%;
   position: absolute;
-  border: 2px solid #ffff;
-  top: 0%;
-  left: 70%;
+  background: #fff;
+  top: 0;
+  left: 72%;
 }
 
 .salaryHike {
-  /* background: #0038FF; */
   color: white;
-  padding: 5px 12px;
+  padding: 5px 10px;
   font-size: 0.8rem;
   border-radius: 6px;
+  font-weight: 600;
 }
 
 .footerInner {
-  display: flex
-;
-    gap: 10px;
-}
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  .header {
-    padding: 40px 15px;
-  }
-  
-  .header h2 {
-    font-size: 1.8rem;
-  }
-  
-  .header p {
-    font-size: 1rem;
-  }
-  
-  .stats {
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .statBox {
-    width: 80%;
-    margin-bottom: 15px;
-  }
-  
-  .testimonials {
-    grid-template-columns: 1fr;
-  }
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  flex-wrap: wrap;
 }
 
-@media (max-width: 480px) {
-  .header h2 {
-    font-size: 1.5rem;
-  }
-  
-  .statBox {
-    width: 100%;
-  }
-  
-  .statNumber {
-    font-size: 1.8rem;
-  }
+.loadMoreContainer {
+  text-align: center;
+  margin: 30px 0;
+}
+
+.loadMoreButton {
+  background: #02509B;
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  font-size: 1rem;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 600;
+}
+
+.loadMoreButton:hover {
+  background: #0380F8;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
 /* Video Popup Styles */
@@ -268,7 +278,7 @@ border-radius: 0px 0px 20px 20px;
 
 .videoPopupContainer {
   position: relative;
-  width: 80%;
+  width: 90%;
   max-width: 800px;
   background: #000;
   border-radius: 8px;
@@ -313,29 +323,210 @@ border-radius: 0px 0px 20px 20px;
   height: 100%;
   border: none;
 }
+/* Add to your SuccessStories.module.css */
 
-/* Make the video tag clickable */
-.videoTag {
-  cursor: pointer;
+.avatarPlaceholder {
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.avatarInitials {
   display: flex;
   align-items: center;
-  gap: 5px;
-  border: none;
-  background: #FFF6E7;
-  color: #F91500;
-  padding: 3px 10px;
-  font-size: 0.8rem;
-  font-weight: 600;
-  border-radius: 16px;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: #02509b; /* You can change this color */
+  color: white;
+  font-weight: bold;
+  font-size: 24px;
+  text-transform: uppercase;
 }
 
-.videoTag:hover {
-  background: #FFE8C7;
+.newprofile{
+  display: flex;
+      gap: 20px;
+      align-items: center;
+      justify-content: center;
 }
 
-/* Responsive adjustments for video popup */
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+  .testimonials {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+}
+@media(max-width:1281px){
+.testimonialsContainer{
+  max-width: 960px;
+}
+
+.cardFooter {
+  padding: 20px 20px;
+  grid-template-columns: 86% 36%;
+}
+.hr{
+  left: 78%;
+}
+}
+
+@media (max-width: 1181px) {
+.successSection{
+  max-width: 900px;
+  margin: auto;
+  left: 10px;
+  position: relative;
+
+}
+.cardFooter{
+  overflow-x: scroll;
+}
+
+}
+
+@media (max-width: 992px) {
+  .header h2 {
+    font-size: 2.2rem;
+  }
+  
+  .header p {
+    font-size: 1.1rem;
+  }
+  
+  .statNumber {
+    font-size: 2rem;
+  }
+}
+
 @media (max-width: 768px) {
-  .videoPopupContainer {
-    width: 95%;
+  .header {
+    padding: 40px 15px;
+  }
+  
+  .header h2 {
+    font-size: 1.8rem;
+  }
+  
+  .header p {
+    font-size: 1rem;
+  }
+  
+  .stats {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  
+  .statBox {
+    min-width: calc(50% - 20px);
+    margin-bottom: 15px;
+  }
+  
+  .testimonials {
+    grid-template-columns: 1fr;
+    padding: 10px;
+  }
+  
+  .videoTag {
+    position: static;
+    margin-top: 10px;
+    align-self: flex-start;
+  }
+  .testimonialsContainer{
+    padding: 0;
+  }
+  .profile{
+    text-align: left;
+    justify-content: space-between;
+    align-items: baseline;
+  
+  }
+  .newprofile{
+    display: flex;
+        gap: 6px;
+        align-items: flex-start;
+        justify-content: center;
+  }
+  .review{
+    font-size: 12px;
+    margin-top: 0px;
+    padding: 0px 14px;
+    margin-bottom: 0;
+  }
+  .cardFooter{
+    padding: 10px;
+    overflow: scroll;
+    grid-template-columns: 91% 37%;
+  }
+  .successSection{
+    left: 12px;
+  }
+  .testimonials{
+    padding: 14px;
+  }
+}
+
+@media (max-width: 576px) {
+  .header {
+    padding: 30px 10px;
+  }
+  
+  .header h2 {
+    font-size: 1.5rem;
+  }
+  
+  .profileInfo h4 {
+    font-size: 14px;
+  }
+  .avatarPlaceholder{
+    width: 40px;
+    height: auto;
+  }
+  .statBox {
+    min-width: 100%;
+  }
+  
+  .statNumber {
+    font-size: 1.8rem;
+  }
+  
+
+  .avatarInitials{
+    width: 50px !important;
+    height: 50px !important;
+
+  }
+  
+  .profileInfo h4, 
+  .profileInfo p {
+    text-align: center;
+  }
+
+  
+  .cardFooter {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .hr {
+    display: none;
+  }
+  
+  .footerInner {
+    justify-content: center;
+  }
+  
+  .loadMoreButton {
+    width: 100%;
+    padding: 10px;
+  }
+}
+
+@media (max-width: 400px) {
+  /* .testimonials {
+    padding: 5px;
+  } */
+  
+  .card {
+    border-radius: 15px 15px 0 0;
   }
 }
